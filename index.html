@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>2022221010 김신우</title>
+
+  
+
+    <style> 
+
+       html {background: url(https://i.pinimg.com/474x/54/2a/13/542a135f47687a3f724ca4b185b0546f.jpg); background-size:contain ; } 
+    /* h1 = 제목 */ h1 {font-family:'SF_IceLemon'; }
+    /* h2 = 일기 본문 */ h2 {font-family: 'Y_Spotlight'; font-size: 15px;}
+    /* span = 상단바 */ span{ font-family:'WandohopeB' ; font-size: 17px;}
+    
+
+    /* 초기화 */
+        * { font-family: 'Y_Spotlight'; }
+            margin: 0; padding: 0;}
+        a { text-decoration: none; }
+        li { list-style: none; }
+    /* 기본 클래스 */
+        .pull-left { float: left; }
+        .pull-right { float:right; }
+
+    /* 페이지 */
+        body {
+            width: 960px; margin: 0 auto;
+            background: #E6E6E6;
+        }
+
+        #page-wrapper {
+            background: rgb(255, 226, 182);
+            margin: 40px 0; padding: 10px 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 6px rgba(88, 87, 87, 0.552);
+        }
+    /* 헤더 */
+        #main-header { padding: 40px 50px; }
+        .master-title { 
+            font-size: 30px; 
+            color: #181818;
+        }
+        .master-description {
+            font-size: 15px; font-weight: 500;
+            color: #383838;
+        }
+
+    /* 네비게이션 */
+
+        #main-navigation {
+            border-top: 1px solid #ff866b;
+            border-bottom: 1px solid #ffbf00;
+            margin-bottom: 20px;
+            height: 40px;
+        }
+        
+        .outer-menu-item {
+            float: left;
+            position: relative;
+        }
+        .outer-menu-item:hover {
+            background: black;
+            color: white
+        }
+
+        .menu-title {
+            display: block;
+            height: 30px; line-height: 0px;
+            text-align: center;
+            padding: 5px 20px;
+        }
+
+        .inner-menu {
+            display: none;
+            position: absolute;
+            top: 40px; left: 0;
+            width: 100%;
+
+            background: white;
+            box-shadow: 0 2px 6px rgba(5, 5, 5, 0.9);
+            z-index: 1000;
+
+            text-align: center
+        }
+
+        .inner-menu-item > a {
+            display: block;
+            padding: 5px 10px;
+            color: black
+        }
+
+        .inner-menu-item > a:hover {
+            background: black;
+            color: white;
+        }
+
+    /* 네비게이션 내부의 검색 */
+
+        .search-bar {
+            height: 26px;
+            padding: 7px;
+        }
+        .input-search {
+            display: block;
+            float: left;
+
+            background-color: #FFFFFF;
+            border: 1px solid #CCCCCC;
+            border-radius: 15px 0 0 15px;
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+
+            width: 120px; height: 24px;
+            padding: 0 0 0 10px;
+            font-size: 12px;
+            color: #555555;
+        }
+
+        .input-search:focus {
+            border-color: rgba(82, 168, 236, 0.8);
+            outline: 0;
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+        }
+
+        .input-search-submit {
+            display: block;
+            float: left;
+
+            width: 50px; height: 26px;
+            border-radius: 0 15px 15px 0;
+            border: 1px solid #CCCCCC;
+
+            margin-left: -1px;
+
+            vertical-align: top;
+            display: inline-block;
+        }
+
+    /* 중앙  */
+
+        /* body 태그의 너비: 960픽셀 */
+        /* #page-wrapper 태그의 padding 속성으로 내용물 너비는 920픽셀 */
+        #content { overflow: hidden; }
+        #main-section {
+            float: left;
+            width: 710px;
+        }
+        #main-aside {
+            float: right;
+            width: 200px;
+        }
+
+    /* 좌측  */
+
+        article { 
+            padding: 0 10px 20px 10px;
+            border-bottom: 1px solid #C8C8C8;
+        }
+
+        .article-header { padding: 20px 0; }
+        .article-title { 
+            font-size: 25px;
+            font-weight: 500; 
+            padding-bottom: 10px;
+        }
+        .article-date { font-size: 13px; }
+        .article-body {
+            font-size: 14px;
+        }
+
+    /* 우측  */
+
+        .aside-list { padding: 10px 0 30px 0; }
+        .aside-list > h3 {
+            font-size: 15px;
+            font-weight: 600;
+        }
+        .aside-list li a {
+            margin-left: 8px;
+            font-size: 13px;
+            color: #6c6c6c;
+        }
+    </style>
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.outer-menu-item').hover(function () {
+                $(this).find('.inner-menu').show();
+            }, function () {
+                $(this).find('.inner-menu').hide();
+            });
+        });
+    </script>
+    
+</head>
+<body>
+    <div id="page-wrapper">
+        <header id="main-header">
+            <hgroup>
+                <div style="background-color: rgb(255, 210, 121); padding: 30px;">
+                <h1 class="master-title"> 
+                   
+                    ✩‧  ₊˚ *  .⋆  ·ฺ⁺˚                                          
+                    ‧₊˚.⋆·ฺ.✩˚ ੈ‧˚ ☆              
+                    ✩* . ·Sħinwoo is ⋆·ฺ  .  ⁺˚ . ⋆ ħappy anđ ħappy ✩   ⁺˚   :ﾟ*｡.⋆·₊ * ⋆ ·ฺ.  ✩* . ⋆·ฺ  .  ⁺˚      
+                    ✩* . ⋆ ⁺૮꒰˵• ﻌ •˵꒱აੈ ✩‧₊˚ੈ*:ﾟ*｡.⋆·ฺᐝ⁺˚
+
+                    </h1>
+               
+            </hgroup>
+        </header>
+        <head>
+            <style>
+                body {
+                    font-family: Arial, Helvetica, sans-serif;
+                    font-weight: bold;
+                    font-size: 12pt;
+                    margin: 0;
+                    border: 0;
+                    padding: 0;
+                }
+                p {
+                    margin: 0;
+                    border: 0;
+                    padding: 10px;
+                }
+                .p {
+                    background-color: rgb(255, 193, 122);
+                    width: 300px;
+                    height: 200px;
+                }
+                .fp {
+                    position: fixed;
+                    right: 5px;
+                    top: 5px;
+                    background-color: lightsalmon;
+                    width: 300px;
+                    height: 50px;
+                }
+                .fp2 {
+                    position: fixed;
+                    right: 0;
+                    bottom: 0;
+                    background-color: lightpink;
+                    width: 300px;
+                    height: 50px;
+                }
+                .fp3 {
+                    position: fixed;
+                    left: 10%;
+                    bottom: 0;
+                    background-color: rgb(255, 160, 83);
+                    width: 300px;
+                    height: 50px;
+                }
+            </style>
+        </head>
+        <body>
+            <h1>ખ가 좋ටㅏ하는 무도 박명수 ටㅏ찌 짤들 몇 ኀዞ 보⋌⫣ㅇㅕ ꒰⍢꒱ ༘*</h1>
+          
+            <img src="https://i.pinimg.com/474x/51/dc/cc/51dccc81d0b0b83104648586d2637d2f.jpg" width="300" /> </p>
+            <img src="https://i.pinimg.com/474x/da/54/54/da5454c10470c16cf1dd17eb902ead59.jpg" width="300" /> </p>
+            <img src="https://i.pinimg.com/474x/74/ae/76/74ae760b06b9fabc075b4b115f94e00e.jpg" width="300" /> </p>
+            <img src="https://i.pinimg.com/474x/1a/c1/aa/1ac1aad1cffa31adf1c8234f40706e55.jpg" width="300" /> </p>
+            <img src="https://i.pinimg.com/474x/79/54/e7/7954e76f81bfb7593e0d160f52a9ff30.jpg" width="300" /> </p>
+            
+            <p class="fp">요리조리 ٩(*'へ'*)و </p>
+            <p class="fp2">까꿍 *.☆⸜(⑉˙ᗜ˙⑉)⸝♡.* </p>
+            <p class="fp3">다들 행복하세염 ٩( *˙0˙*)۶</p>
+        </body>
+
+            <style>
+                body {
+                    font-family: Arial, Helvetica, sans-serif;
+                    background-color: rgb(255, 232, 189);
+                    color: rgb(0, 0, 0);
+                    width: 500px;
+                }
+                h3 {
+                    padding: 50px;
+                    border: solid 10px;
+                }
+                box {
+                    background-color: goldenrod;
+                    padding: 10;
+                }
+                h3.none { border-style: none; }
+                h3.hidden { border-style: hidden;  }
+                h3.dotted {
+                    border-style: dotted;
+                    border-color: beige;
+                }
+                h3.dashed{
+                    border-color: blueviolet;
+                    border-style: dashed;
+                    color: rgb(0, 0, 0);
+                    border-top-color: darkorange ;
+                    border-right-color: greenyellow;
+                    border-bottom-color: darksalmon;
+                    border-left-color: rgb(255, 245, 157);
+                }
+        
+            </style>
+        </head>
+        <body>
+            <img src="https://i.pinimg.com/474x/5d/c5/1d/5dc51dfbb5727b3c6810939adc40923c.jpg" width="480" />
+            <h3 class="box dotted">무도는 항상 유튜브ના લ્લ서 보는લા 진짜 너무 너무 재밌음 진짜 スΙ금도 무도 유튜브로 틀ન놓ヱ 과제하는 중 ₍⑅ᐢ. ̬.ᐢ₎♡</h3>
+            <h3 class="'box dashed">5월 4일ના 네̆̈일하સ 가スΙસુ ටㅏપ 나 손톱 하나 젤네̆̈일 떨ન짐ππ 난ય치다̆가 떨ન져써잉 속상 빨ય ላዞ로 바꾸ヱ 싶당 5월 4일 언제 왕 ૮˶• ﻌ •˶ა</h3>
+            <h3 class="box solid">ටㅏ રલા ગ거 하는લા ગ렇게̆ 하는 게̆ 맞나 싶은લા ュઐ도 열심히 하는 중..</h3>
+            <h3 class="box mix">5월 5일 નયૃગ 날ગスΙસુ 난 ටㅏ직 નયૃગ라ヱ 생각함 ન쩔 ખ 맘 ටㅏ직 나 생일 안 スΙ나서 만으로 18살임 ៖애 ㅈㅅ</h3>
+        </body>
+
+        <style>
+            
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+                font-weight: bold;
+                font-size: 12pt;
+                border: 0;
+                margin: 0;
+                padding: 0;
+            }
+            p, div {
+                border: 0;
+                padding: 0;
+                margin: 0;
+            }
+            .sp {
+                position: static;
+                left: 30px;
+                background-color: lightsalmon;
+                width: 400px;
+                height: 50px;
+            }
+            .rp1 {
+                position: relative;
+                left: 30px;
+                top: -10px;
+                background-color: rgb(255, 182, 80);
+                width: 400px;
+                height: 50px;
+            }
+            .rp2 {
+                position: relative;
+                left: 60px;
+                top: 20px;
+                background-color: lemonchiffon;
+                width: 400px;
+                height: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>5월달ના ㅇㅕ행 간댜.ᐟ.ᐟ.ᐟ.ᐟ</h1>
+        <p class="sp">5월 달ના 엄마ටㅏ빠 결혼⌝ᥣ념일 20주년으로 여̆행 가スΙ롱</p>
+        <div class="rp1">여̆수를 갑પ당 여̆수 ꔌ랜만ના 가는 듯.ᐟ.ᐟ 한 약 1년 전?ˀ 2년 전?ˀના 갔다̆가 코로나 때ભો 못 감π
+        </div>
+        <p class="rp2">너무너무 ⌝ᥣ대 중.ᐟ.ᐟ.ᐟ.ᐟ 히히 빨ય 힐યુ하સ 가ヱ 싶당</p>
+    </body> 
+        <head>
+            <style>
+            @font-face {
+    font-family: 'Yeongdo-Rg';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202-2@1.0/Yeongdo-Rg.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+            
+    
+            h1, p {font-family: 'Yeongdo-Rg' ;}
+            p {font-size: 13px;}
+    
+                #rcorners1 {
+                    border-radius: 15px;
+                    border: 5px solid rgb(255, 178, 139);
+                    padding: 20px;
+                    width: 200px;
+                    height: 150px;
+                    font-family: 'YUniverse-L';
+                }
+    
+                #rcorners2 {
+                    border-radius: 15px;
+                    border: 5px solid rgb(255, 214, 139);
+                    padding: 20px;
+                    width: 200px;
+                    height: 150px;
+                    font-family: 'YUniverse-L';
+                }
+    
+                #rcorners3 {
+                    border-radius: 15px;
+                    border: 5px solid rgb(255, 160, 155);
+                    padding: 20px;
+                    width: 200px;
+                    height: 150px;
+                    font-family: 'YUniverse-L';
+                }
+            </style>
+        </head>
+    
+        <body>
+            <br>
+            <hr>
+            <h1>⋌∣누가 보ヱ 있는 거</h1>
+            <hr>
+            <br>
+    
+            <p>진짜 너무 ભૂ있는 거 ටㅏㄴㅣ냐ヱπ</p>
+            <p id="rcorners1"><iframe width="250" height="170" src="https://www.youtube.com/embed/rhHX-nnhP-Q" title="YouTube video player" frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p> 
+            <p>둘의 케미 또 언제 볼 수 있냐궁ㅠ</p>
+            <p id="rcorners2"><iframe width="250" height="170" src="https://www.youtube.com/embed/a6uavgARydw" title="YouTube video player" frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+            <p>그럼 이만 시누는 갑니다</p>
+            <p id="rcorners3"><img src="https://i.pinimg.com/474x/36/a8/7a/36a87a06a7ed71df46bb40c87bfa7db4.jpg" width="225" /></p> 
+            
+        </body>
+
+
+        <body>
+            <img src="https://i.pinimg.com/474x/09/48/d8/0948d81d1ed7931005eff99ddc85a0e0.jpg" width="400" />
+            <img src="https://i.pinimg.com/474x/2c/c4/1d/2cc41da63f04639461aa7a22a153cd0b.jpg" width="300" />
+            <h3 class="box dotted"> ꔌ늘은 નયૃગ날 우ય들 ⋌⫣상 네̆̈?ˀ 저 નયૃગ인લા요̆̈. ටㅏ직 만으로 18살인લા요̆̈.  </h3>
+            <h3 class="'box dashed"> ગ번ના 외가족들ગ랑 푸파를 했삼요̆̈. 외가족 중ના ⋌˫촌 동생들 두 명ગ 있는લા 한 명은 중3ગ 한 명은 쨈민ગ 5학년인લા 너무 귀여̆શ용 중3
+                짜ય ටㅏ직 ખ 눈엔 애⌝ᥣ임 진짜 ખ 애⌝ᥣ들 온냐가 많ગ ⋌˫랑해̆̈~ 쨈민ગ한텐 ગ번ના નયૃગ 날 선물 줬는લા 중વુ한텐 안 줘서 깊દા들 다̆ 보ખ줘야̆겠삼요̆̈ 알라뷰들 마ગ ખોગ비들
+            </h3>
+            <h3 class="box solid"> 친가족들ગ랑도 소갈비 푸파함 રલા 갑자̆̈⌝ᥣ 배가 ටㅏ파서 별로 못 먹었લપ 억울하네̆̈요̆̈. ખ 다̆ગન⋸ 전 최후થ 만찬ગ었는લા.. </h3>
+            <h3 class="box mix"> ખ가 운전을 해̆̈서 ටㅏ빠가 맘편히 술 마⋌∣ヱ 운전대를 저ના게̆ 주네̆̈요̆̈. 후후 운전 좋ටㅏ요̆̈ રલા 좀 귀찮.. ગ ටㅏપ라 좋ටㅏ요̆̈. રલા ටㅏ직 주차는 완벽하スΙ 않ටㅏ서
+                ગ번 주 주말ના ටㅏ빠랑 주차 연습을 하સ 갈 거예요̆̈. ⋌˫랑해̆̈ 울 엄마 ටㅏ빠 알라뷰 </h3>
+        </body>
+
+    </article>
+</body>
+</html>
